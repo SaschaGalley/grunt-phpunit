@@ -12,7 +12,7 @@
 	"url": "git://github.com/SaschaGalley/grunt-phpunit.git"
   },
   "contributors": [],
-  "version": "0.1.0",
+  "version": "0.1.1",
   
   "main": "Gruntfile.js",
   "engines": {
@@ -25,6 +25,6 @@
       "gruntplugin",
       "phpunit"
   ],
-  "_id": "grunt-phpunit@0.1.0",
+  "_id": "grunt-phpunit@0.1.1",
   "_from": "phpunit"
 }
