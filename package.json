@@ -1,10 +1,15 @@
 {
   "name": "grunt-phpunit",
-  "description": "",
-  "homepage": "",
+  "description": "Grunt plugin for running phpunit.",
+  "homepage": "https://github.com/SaschaGalley/grunt-phpunit",
   "author": {
     "name": "Sascha Galley",
-    "email": "me@xash.at"
+    "email": "me@xash.at",
+    "url": "http://xash.at/"
+  },
+  "repository": {
+	"type": "git",
+	"url": "git://github.com/gruntjs/grunt-contrib-less.git"
   },
   "contributors": [],
   "version": "0.1.0",
@@ -12,7 +17,14 @@
   "main": "Gruntfile.js",
   "engines": {
     "node": ">=0.8.0"
-  }
+  },
+  "devDependencies": {
+  	"grunt-contrib-jshint": "0.1.1rc7"
+  },
+  "keywords": [
+      "gruntplugin",
+      "phpunit"
+  ],
   "_id": "grunt-phpunit@0.1.0",
   "_from": "phpunit"
 }

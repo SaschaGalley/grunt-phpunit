@@ -28,7 +28,9 @@ module.exports = function(grunt) {
 				path: './test/'
 			},
 			options: {
-				bin: 'vendor/bin/phphunit'
+				bin: 'vendor/bin/phphunit',
+				bootstrap: 'phpunit.php',
+				colors: true
 			}
 		}
 	});
