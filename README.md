@@ -1,2 +1,1 @@
-grunt-contrib-phpunit
-=====================
+# grunt-phpunit
