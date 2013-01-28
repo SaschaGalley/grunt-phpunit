@@ -9,7 +9,7 @@
   },
   "repository": {
 	"type": "git",
-	"url": "git://github.com/gruntjs/grunt-contrib-less.git"
+	"url": "git://github.com/SaschaGalley/grunt-phpunit.git"
   },
   "contributors": [],
   "version": "0.1.0",
