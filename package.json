@@ -12,7 +12,7 @@
     "url": "git://github.com/SaschaGalley/grunt-phpunit.git"
   },
   "contributors": [],
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "Gruntfile.js",
   "engines": {
     "node": ">=0.8.0"
@@ -23,13 +23,5 @@
   "keywords": [
     "gruntplugin",
     "phpunit"
-  ],
-  "_id": "grunt-phpunit@0.1.1",
-  "_from": "grunt-phpunit@>=0.1.1",
-  "readme": "# grunt-phpunit\n\n> Grunt plugin for running phpunit.\n\n##Getting Started\n1. Install this grunt plugin with the following command:\n\n\t```shell\n\tnpm install grunt-phpunit --save-dev\n\t```\n\n\n2. [Install phpunit](https://github.com/sebastianbergmann/phpunit/#installation) (preferably with [composer](https://github.com/composer/composer))\n3. Add this to your project's `Gruntfile.js` gruntfile:\n\n\t```js\n\tgrunt.loadNpmTasks('grunt-phpunit');\n\t```\n\n\n##PHPUnit task\n_Run this task with the `grunt phpunit` command._\n\n_This task is a [multi task][] so any targets, files and options should be specified according to the [multi task][] documentation._\n\n[multi task]: https://github.com/gruntjs/grunt/wiki/Configuring-tasks\n\n_This plugin is developed for Grunt `0.4.0` and is not tested for backward compatibility with Grunt `0.3.x`._\n\n###Target Properties\n####path\nType: `String`\n\nThe executable binary.\n\n###Options\n####bin\nType: `String`  Default: `'phpunit'`\n\n####bootstrap\nType: `String` Default: `false`\n\nA \"bootstrap\" PHP file that is run before the tests.\n\n####colors\nType: `Boolean` Default: `false`\n\nUse colors in output.\n\n###Usage Example\n\n```js\nphpunit: {\n\tclasses: {\n\t\tpath: 'tests/php/',\n\t\tbootstrap: 'phpunit.php'\n\t},\n\toptions: {\n\t\t'bin': 'vendor/bin/phpunit',\n\t\tcolors: true\n\t}\n}\n```",
-  "readmeFilename": "README.md",
-  "dist": {
-    "shasum": "7b7671e1100478ad76b74b05c475a1be03f98cd2"
-  },
-  "_resolved": "https://registry.npmjs.org/grunt-phpunit/-/grunt-phpunit-0.1.1.tgz"
+  ]
 }
