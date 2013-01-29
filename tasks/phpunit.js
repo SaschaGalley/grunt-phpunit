@@ -20,6 +20,7 @@ module.exports = function(grunt) {
 			// default options
 			bin: 'phpunit',
 			bootstrap: false,
+			colors: false,
 			stdout: true,
 			stderr: true,
 			failOnError: true
@@ -35,10 +36,10 @@ module.exports = function(grunt) {
 		
 		grunt.log.writeln('Starting phpunit in ' + dir.cyan);
 		
-		var cmd = options.bin;
+		var cmd = path.normalize(options.bin);
 		
 		// set colored output
-		if ( options.color === true )
+		if ( options.colors === true )
 			cmd += ' --colors';
 		
 		// phpunit bootstrap

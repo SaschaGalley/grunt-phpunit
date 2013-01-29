@@ -31,11 +31,13 @@ _This plugin is developed for Grunt `0.4.0` and is not tested for backward compa
 ####path
 Type: `String`
 
-The executable binary.
+The path where phpunit should be run, i.e. where the test classes and the bootstrap are located in.
 
 ###Options
 ####bin
 Type: `String`  Default: `'phpunit'`
+
+The executable binary.
 
 ####bootstrap
 Type: `String` Default: `false`
@@ -55,7 +57,7 @@ phpunit: {
 		path: 'tests/php/'
 	},
 	options: {
-		'bin': 'vendor/bin/phpunit',
+		bin: 'vendor/bin/phpunit',
 		bootstrap: 'phpunit.php',
 		colors: true
 	}
