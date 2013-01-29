@@ -28,10 +28,10 @@ _This task is a [multi task][] so any targets, files and options should be speci
 _This plugin is developed for Grunt `0.4.0` and is not tested for backward compatibility with Grunt `0.3.x`._
 
 ###Target Properties
-####path
+####dir
 Type: `String`
 
-The path where phpunit should be run, i.e. where the test classes and the bootstrap are located in.
+The directory where phpunit should be run, i.e. where the test classes and the bootstrap are located in.
 
 ###Options
 ####bin
@@ -47,14 +47,29 @@ A "bootstrap" PHP file that is run before the tests.
 ####colors
 Type: `Boolean` Default: `false`
 
-Use colors in output.
+Use colors in output. This option can also be set by running the task with `--colors`.
+
+####coverage
+Type: `Boolean` Default: `false`
+
+Generate code coverage report in text format. This option can also be set by running the task with `--coverage`.
+
+####debug
+Type: `Boolean` Default: `false`
+
+Display debbuging information during test execution. This option can also be set by running the task with `--debug`.
+
+####verbose
+Type: `Boolean` Default: `false`
+
+Output more verbose information. This option can also be set by running the task with `--verbose`.
 
 ###Usage Example
 
 ```js
 phpunit: {
 	classes: {
-		path: 'tests/php/'
+		dir: 'tests/php/'
 	},
 	options: {
 		bin: 'vendor/bin/phpunit',

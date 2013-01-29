@@ -1,11 +1,11 @@
 /*
- * grunt-contrib-phpunit
- * http://gruntjs.com/
+ * grunt-phpunit
+ * https://github.com/SaschaGalley/grunt-phpunit
  *
- * Copyright (c) 2012 Tyler Kellen, contributors
+ * Copyright (c) 2013 Sascha Galley
+ * http://xash.at
  * Licensed under the MIT license.
  */
-
 'use strict';
 
 module.exports = function(grunt) {
@@ -25,10 +25,10 @@ module.exports = function(grunt) {
 		
 		phpunit: {
 			classes: {
-				path: './test/'
+				dir: './test/'
 			},
 			options: {
-				bin: 'vendor/bin/phpunit',
+				bin: 'vendor/bin/phphunit',
 				bootstrap: 'phpunit.php',
 				colors: true
 			}

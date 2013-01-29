@@ -1,8 +1,8 @@
 /*
  * grunt-phpunit
- * 0.1.0 - 2013-01-22
+ * https://github.com/SaschaGalley/grunt-phpunit
  *
- * (c) Sascha Galley
+ * Copyright (c) 2013 Sascha Galley
  * http://xash.at
  * Licensed under the MIT license.
  */
@@ -12,66 +12,71 @@ module.exports = function(grunt) {
 	var _ = grunt.util._;
 	
 	var path = require('path');
+	var exec = require('child_process').exec;
 	
 	grunt.registerMultiTask( 'phpunit', 'Run phpunit', function() {
+	
+		var done = this.async();
 		
 		// Merge task-specific and/or target-specific options with these defaults.
 		var options = this.options({
-			// default options
+			// Default options
 			bin: 'phpunit',
 			bootstrap: false,
 			colors: false,
-			stdout: true,
-			stderr: true,
-			failOnError: true
+			coverage: false,
+			debug: false,
+			verbose: false
 		});
 		
-		var exec = require('child_process').exec;
-		var done = this.async();
-		
-		var dataOut = options.stdout;
-		var dataErr = options.stderr;
-
-		var dir = path.normalize(this.data.path);
-		
-		grunt.log.writeln('Starting phpunit in ' + dir.cyan);
-		
+		// Normalize dir and cmd.
+		var dir = path.normalize(this.data.dir);
 		var cmd = path.normalize(options.bin);
 		
-		// set colored output
-		if ( options.colors === true )
+		if (grunt.option('colors') || options.colors === true) {
+			// Use colors in output.
 			cmd += ' --colors';
+		}
 		
-		// phpunit bootstrap
-		if ( options.bootstrap )
+		if (options.bootstrap) {
+			// A "bootstrap" PHP file that is run before the tests.
 			cmd += ' --bootstrap '+dir+options.bootstrap;
+		}
 		
-		// add directory
-		cmd += ' '+dir;
+		if (grunt.option('coverage') || options.coverage === true) {
+			// Generate code coverage report in text format.
+			cmd += ' --coverage-text';
+		}
 		
-		grunt.verbose.writeln('Cmd: '+cmd);
+		if (grunt.option('debug') || options.debug === true) {
+			// Display debbuging information during test execution.
+			cmd += ' --debug';
+		}
 		
-		exec( cmd, function( err, stdout, stderr ) {
+		if (grunt.option('verbose') || options.verbose === true) {
+			// Output more verbose information.
+			cmd += ' --verbose';
+		}
+		
+		// Set working directory.
+		cmd += ' ' + dir;
+		
+		grunt.log.writeln('Starting phpunit (target: ' + this.target.cyan + ') in ' + dir.cyan);
+		grunt.verbose.writeln('Exec: ' + cmd);
+		
+		// Execute phpunit command.
+		exec(cmd, function( err, stdout, stderr) {
 			
-			if ( stdout ) {
-				if ( _.isFunction( dataOut ) ) {
-					dataOut( stdout );
-				} else if ( dataOut === true ) {
-					grunt.log.write( stdout );
-				}
+			if (stdout) {
+				grunt.log.write(stdout);
 			}
 
-			if ( err ) {
-				if ( _.isFunction( dataErr ) ) {
-					dataErr( stderr );
-				} else if ( options.failOnError === true ) {
-					grunt.fatal( err );
-				} else if ( dataErr === true ) {
-					grunt.log.error( err );
-				}
+			if (err) {
+				grunt.fatal(err);
 			}
 
 			done();
+			
 		});
 	});
 };
