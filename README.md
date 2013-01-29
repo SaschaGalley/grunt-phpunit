@@ -52,11 +52,11 @@ Use colors in output.
 ```js
 phpunit: {
 	classes: {
-		path: 'tests/php/',
-		bootstrap: 'phpunit.php'
+		path: 'tests/php/'
 	},
 	options: {
 		'bin': 'vendor/bin/phpunit',
+		bootstrap: 'phpunit.php',
 		colors: true
 	}
 }
