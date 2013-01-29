@@ -21,10 +21,9 @@ module.exports = function(grunt) {
 			bin: 'phpunit',
 			bootstrap: false,
 			stdout: true,
-			stderr: true
+			stderr: true,
+			failOnError: true
 		});
-		
-		grunt.verbose.writeflags(options, 'Options');
 		
 		var exec = require('child_process').exec;
 		var done = this.async();
@@ -49,7 +48,7 @@ module.exports = function(grunt) {
 		// add directory
 		cmd += ' '+dir;
 		
-		grunt.log.writeln(cmd);
+		grunt.verbose.writeln('Cmd: '+cmd);
 		
 		exec( cmd, function( err, stdout, stderr ) {
 			
@@ -64,7 +63,7 @@ module.exports = function(grunt) {
 			if ( err ) {
 				if ( _.isFunction( dataErr ) ) {
 					dataErr( stderr );
-				} else if ( data.failOnError === true ) {
+				} else if ( options.failOnError === true ) {
 					grunt.fatal( err );
 				} else if ( dataErr === true ) {
 					grunt.log.error( err );
