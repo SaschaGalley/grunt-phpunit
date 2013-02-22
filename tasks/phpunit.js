@@ -66,6 +66,7 @@ module.exports = function(grunt) {
 		cmd += ' ' + dir;
 		
 		grunt.log.writeln('Starting phpunit (target: ' + this.target.cyan + ') in ' + dir.cyan);
+	    	grunt.log.writeln('Exec: "' + cmd + '"');
 		grunt.verbose.writeln('Exec: ' + cmd);
 		
 		// Execute phpunit command.
