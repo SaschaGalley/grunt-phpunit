@@ -40,7 +40,11 @@ module.exports = function(grunt) {
 		
 		if (options.bootstrap) {
 			// A "bootstrap" PHP file that is run before the tests.
-			cmd += ' --bootstrap '+dir+options.bootstrap;
+			if (grunt.file.exists(dir + options.bootstrap)) {
+				cmd += ' --bootstrap ' + dir + options.bootstrap;
+			} else {
+				cmd += ' --bootstrap ' + options.bootstrap;
+			}
 		}
 		
 		if (grunt.option('coverage') || options.coverage === true) {

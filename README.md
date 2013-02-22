@@ -73,7 +73,7 @@ phpunit: {
 	},
 	options: {
 		bin: 'vendor/bin/phpunit',
-		bootstrap: 'phpunit.php',
+		bootstrap: 'tests/php/phpunit.php',
 		colors: true
 	}
 }
