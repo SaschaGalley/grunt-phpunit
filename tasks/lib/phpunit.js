@@ -1,8 +1,9 @@
 /*
- * grunt-contrib-jshint
- * http://gruntjs.com/
+ * grunt-phpunit
+ * https://github.com/SaschaGalley/grunt-phpunit
  *
- * Copyright (c) 2012 "Cowboy" Ben Alman, contributors
+ * Copyright (c) 2013 Sascha Galley
+ * http://xash.at
  * Licensed under the MIT license.
  */
 'use strict';
@@ -97,7 +98,12 @@ exports.init = function(grunt) {
     }
     
     if (config.configuration) {
-      cmd += ' --configuration ' + config.configuration;
+      // A "bootstrap" PHP file that is run before the tests.
+      if (grunt.file.exists(dir + config.configuration)) {
+        cmd += ' --configuration ' + dir + config.configuration;
+      } else {
+        cmd += ' --configuration ' + config.configuration;
+      }
     }
     
     if (config.logJunit) {

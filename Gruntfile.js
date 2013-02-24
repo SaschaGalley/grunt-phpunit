@@ -25,11 +25,12 @@ module.exports = function(grunt) {
     
     phpunit: {
       classes: {
-        dir: './test/'
+        dir: './php/tests/'
       },
       options: {
         bin: 'vendor/bin/phpunit',
-        bootstrap: 'test/bootstrap.php',
+        bootstrap: 'bootstrap.php',
+        configuration: 'phpunit.xml',
         colors: true
       }
     }
