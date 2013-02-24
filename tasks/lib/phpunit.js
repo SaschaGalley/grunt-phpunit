@@ -1,8 +1,9 @@
 /*
- * grunt-contrib-jshint
- * http://gruntjs.com/
+ * grunt-phpunit
+ * https://github.com/SaschaGalley/grunt-phpunit
  *
- * Copyright (c) 2012 "Cowboy" Ben Alman, contributors
+ * Copyright (c) 2013 Sascha Galley
+ * http://xash.at
  * Licensed under the MIT license.
  */
 'use strict';
@@ -21,11 +22,14 @@ exports.init = function(grunt) {
             colors: false,
             coverage: false,
             debug: false,
-            verbose: false
+            verbose: false,
+            configuration: false
         },
         cmd    = null,
         done   = null,
         config = {};
+
+
 
     /**
      * Builds phpunit command
@@ -44,6 +48,13 @@ exports.init = function(grunt) {
         if (config.bootstrap) {
             // A "bootstrap" PHP file that is run before the tests.
             cmd += ' --bootstrap '+ dir + config.bootstrap;
+        }
+
+        if(config.configuration === false) {
+            cmd += ' --no-configuration';
+        }
+        else {
+            cmd += ' --configuration ' + dir + config.configuration;
         }
 
         if (grunt.option('coverage') || config.coverage === true) {

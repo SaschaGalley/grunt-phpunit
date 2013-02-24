@@ -10,37 +10,38 @@
 
 module.exports = function(grunt) {
 
-	// Project configuration.
-	grunt.initConfig({
-		
-		jshint: {
-			all: [
-				'Gruntfile.js',
-				'tasks/*.js'
-			],
-			options: {
-				jshintrc: '.jshintrc'
-			}
-		},
-		
-		phpunit: {
-			classes: {
-				dir: './test/'
-			},
-			options: {
-				bin: 'vendor/bin/phphunit',
-				bootstrap: 'phpunit.php',
-				colors: true
-			}
-		}
-	});
+    // Project configuration.
+    grunt.initConfig({
 
-	// Actually load this plugin's task(s).
-	grunt.loadTasks('tasks');
-	
-	grunt.loadNpmTasks('grunt-contrib-jshint');
+        jshint: {
+            all: [
+                'Gruntfile.js',
+                'tasks/*.js'
+            ],
+            options: {
+                jshintrc: '.jshintrc'
+            }
+        },
 
-	// By default, lint and run all tests.
-	grunt.registerTask('default', ['jshint', 'phpunit']);
+        phpunit: {
+            classes: {
+                dir: './php/tests/'
+            },
+            options: {
+                bin: 'vendor/bin/phpunit',
+                bootstrap: 'bootstrap.php',
+                configuration: 'phpunit.xml',
+                colors: true
+            }
+        }
+    });
+
+    // Actually load this plugin's task(s).
+    grunt.loadTasks('tasks');
+
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+
+    // By default, lint and run all tests.
+    grunt.registerTask('default', ['jshint', 'phpunit']);
 
 };
