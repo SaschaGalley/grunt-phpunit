@@ -13,8 +13,8 @@ module.exports = function(grunt) {
     // Internal lib.
     var phpunit = require('./lib/phpunit').init(grunt);
 
-	grunt.registerMultiTask( 'phpunit', 'Run phpunit', function() {
+    grunt.registerMultiTask( 'phpunit', 'Run phpunit', function() {
         phpunit.setup(this);
         phpunit.run();
-	});
+    });
 };
