@@ -52,7 +52,7 @@ if ( ! defined('KOHANA_START_MEMORY'))
 }
 
 // Bootstrap the application
-require './bootstrap'.EXT;
+require 'bootstrap'.EXT;
 
 // Disable output buffering
 ob_end_flush();
