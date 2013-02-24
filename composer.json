@@ -7,6 +7,7 @@
         "symfony/console": "~2.1@dev",
         "symfony/finder": "~2.1",
         "symfony/process": "~2.1@dev",
-        "phpunit/phpunit": "~3.7.10"
+        "phpunit/phpunit": "~3.7.10",
+        "apix/autoloader": "1.0.*"
     }
 }

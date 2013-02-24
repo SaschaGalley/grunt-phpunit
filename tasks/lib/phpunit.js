@@ -21,11 +21,14 @@ exports.init = function(grunt) {
             colors: false,
             coverage: false,
             debug: false,
-            verbose: false
+            verbose: false,
+            configuration: false
         },
         cmd    = null,
         done   = null,
         config = {};
+
+
 
     /**
      * Builds phpunit command
@@ -44,6 +47,13 @@ exports.init = function(grunt) {
         if (config.bootstrap) {
             // A "bootstrap" PHP file that is run before the tests.
             cmd += ' --bootstrap '+ dir + config.bootstrap;
+        }
+
+        if(config.configuration === false) {
+            cmd += ' --no-configuration';
+        }
+        else {
+            cmd += ' --configuration ' + dir + config.configuration;
         }
 
         if (grunt.option('coverage') || config.coverage === true) {

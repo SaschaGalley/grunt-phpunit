@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
 	// Project configuration.
 	grunt.initConfig({
-		
+
 		jshint: {
 			all: [
 				'Gruntfile.js',
@@ -22,14 +22,15 @@ module.exports = function(grunt) {
 				jshintrc: '.jshintrc'
 			}
 		},
-		
+
 		phpunit: {
 			classes: {
-				dir: './test/'
+				dir: './php/tests/'
 			},
 			options: {
-				bin: 'vendor/bin/phphunit',
-				bootstrap: 'phpunit.php',
+				bin: 'vendor/bin/phpunit',
+				bootstrap: 'bootstrap.php',
+                configuration: 'phpunit.xml',
 				colors: true
 			}
 		}
@@ -37,7 +38,7 @@ module.exports = function(grunt) {
 
 	// Actually load this plugin's task(s).
 	grunt.loadTasks('tasks');
-	
+
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 
 	// By default, lint and run all tests.
