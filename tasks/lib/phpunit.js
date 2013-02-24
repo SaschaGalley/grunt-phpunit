@@ -1,8 +1,9 @@
 /*
- * grunt-contrib-jshint
- * http://gruntjs.com/
+ * grunt-phpunit
+ * https://github.com/SaschaGalley/grunt-phpunit
  *
- * Copyright (c) 2012 "Cowboy" Ben Alman, contributors
+ * Copyright (c) 2013 Sascha Galley
+ * http://xash.at
  * Licensed under the MIT license.
  */
 'use strict';
