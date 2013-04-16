@@ -15,7 +15,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 	```
 
 
-2. [Install phpunit](https://github.com/sebastianbergmann/phpunit/#installation) (preferably with [composer](https://github.com/composer/composer))
+2. This plugin comes with PHPUnit 3.7.19, but other versions can be installed. [Install phpunit](https://github.com/sebastianbergmann/phpunit/#installation) (preferably with [composer](https://github.com/composer/composer)) 
 
 	```shell
 	composer install

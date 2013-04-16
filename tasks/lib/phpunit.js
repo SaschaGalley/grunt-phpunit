@@ -17,7 +17,7 @@ exports.init = function(grunt) {
   var exports  = {},
     defaults = {
       // Default options
-      bin: 'phpunit',
+      bin: path.resolve(__dirname, '..', '..', 'bin', 'phpunit'),
       bootstrap: false,
       colors: false,
       coverage: false,
