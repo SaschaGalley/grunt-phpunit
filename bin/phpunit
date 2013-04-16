@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# script directory
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PHPDOC=$DIR/phpunit.phar
+PHP=$(type -p php) 
+
+# call phpdocumentator with args passed by this script using php 
+${PHP} ${PHPDOC} $@
