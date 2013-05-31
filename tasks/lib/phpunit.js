@@ -232,7 +232,7 @@ exports.init = function(grunt) {
    */
   exports.setup = function(runner) {
 
-    var dir = path.normalize(runner.data.dir);
+    var dir = runner.data.dir ? path.normalize(runner.data.dir) : '';
     config  = runner.options(defaults);
     cmd     = buildCommand(dir) + ' ' + dir;
 
