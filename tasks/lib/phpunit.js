@@ -53,7 +53,8 @@ exports.init = function(grunt) {
       staticBackup: false,
       noConfiguration: false,
       includePath: false,
-      d: false
+      d: false,
+      followOutput: false
     },
     cmd    = null,
     done   = null,
@@ -248,9 +249,9 @@ exports.init = function(grunt) {
    */
   exports.run = function() {
 
-    exec(cmd, function(err, stdout, stderr) {
+    var term = exec(cmd, function(err, stdout, stderr) {
 
-      if (stdout) {
+      if (stdout && !config.followOutput) {
         grunt.log.write(stdout);
       }
 
@@ -259,6 +260,12 @@ exports.init = function(grunt) {
       }
       done();
     });
+
+    if (config.followOutput) {
+      term.stdout.on('data', function(data) {
+        grunt.log.write(data);
+      });
+    }
   };
 
   return exports;

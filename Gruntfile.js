@@ -31,7 +31,8 @@ module.exports = function(grunt) {
         bin: 'vendor/bin/phpunit',
         bootstrap: 'bootstrap.php',
         configuration: 'phpunit.xml',
-        colors: true
+        colors: true,
+        followOutput: true
       }
     }
   });
