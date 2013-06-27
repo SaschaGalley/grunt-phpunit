@@ -58,7 +58,8 @@ exports.init = function(grunt) {
     staticBackup: false,
     noConfiguration: false,
     includePath: false,
-    d: false
+    d: false,
+    followOutput: false
   };
 
   /**
@@ -215,6 +216,15 @@ exports.init = function(grunt) {
 
     return command() + ' ' + buildOptions() + ' ' + directory;
   };
+
+  /**
+   * Returns the phpunit config object
+   *
+   * @return string
+   */
+  exports.config = function() {
+    return config;
+  }
 
   return exports;
 };

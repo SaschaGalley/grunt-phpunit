@@ -234,3 +234,9 @@ Prepend PHP's include_path with given path(s).
 Type: `String` Default: `false`
 
 Sets a php.ini value.
+
+####followOutput
+Type: `Boolean` Default: `false`
+
+Prints the output to the console immediately, instead of displaying the whole ouput at the end.
+This can be useful -combining with debug: true- when there are many long running tests.
