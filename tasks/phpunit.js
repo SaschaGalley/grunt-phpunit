@@ -18,11 +18,12 @@ module.exports = function(grunt) {
 
     var command = builder.build(this.data.dir, this.options);
     var dir     = builder.directory();
+    var config  = builder.config();
 
     grunt.log.writeln('Starting phpunit (target: ' + this.target.cyan + ') in ' + dir.cyan);
     grunt.verbose.writeln('Exec: ' + command);
 
-    phpunit.run(command, this.async());
+    phpunit.run(command, this.async(), config);
   });
 
 };

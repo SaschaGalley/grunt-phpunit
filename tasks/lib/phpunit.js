@@ -13,17 +13,19 @@ var exec = require('child_process').exec;
 
 exports.init = function(grunt) {
 
+
   /**
    * Runs phpunit command with options
    *
    * @param String command
    * @param Function callback
+   * @param Object config
    */
-  exports.run = function(command, callback) {
+  exports.run = function(command, callback, config) {
 
-    exec(command, function(err, stdout, stderr) {
+    var term = exec(command, function(err, stdout, stderr) {
 
-      if (stdout) {
+      if (stdout && !config.followOutput) {
         grunt.log.write(stdout);
       }
 
@@ -32,6 +34,12 @@ exports.init = function(grunt) {
       }
       callback();
     });
+
+    if (config.followOutput) {
+      term.stdout.on('data', function(data) {
+        grunt.log.write(data);
+      });
+    }
   };
 
   return exports;
