@@ -12,14 +12,14 @@
     "url": "git://github.com/SaschaGalley/grunt-phpunit.git"
   },
   "contributors": [],
-  "version": "0.2.1",
+  "version": "0.3.0",
   "main": "Gruntfile.js",
   "engines": {
-    "node": ">=0.8.0"
+    "node": "0.10.x"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.1.1",
-    "grunt": "~0.4.0"
+    "grunt": "~0.4.1"
   },
   "keywords": [
     "gruntplugin",
