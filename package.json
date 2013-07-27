@@ -11,14 +11,12 @@
     "type": "git",
     "url": "git://github.com/SaschaGalley/grunt-phpunit.git"
   },
+  "version": "0.3.0",
   "contributors": [{
     "name": "James Cryer",
     "email": "chat@jamescryer.com",
     "url": "http://www.jamescryer.com/"
   }],
-  "version": "0.3.0",
-  "contributors": [],
-
   "main": "Gruntfile.js",
   "engines": {
     "node": "0.10.x"
