@@ -224,7 +224,7 @@ exports.init = function(grunt) {
    */
   exports.config = function() {
     return config;
-  }
+  };
 
   return exports;
 };
