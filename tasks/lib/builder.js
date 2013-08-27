@@ -168,6 +168,8 @@ exports.init = function(grunt) {
     _.each(valued, function(value, key) {
       if(config[key]) {
         options.push('--'+value+' '+config[key]);
+      } else if (grunt.option(value)) {
+        options.push('--'+value+' '+grunt.option(value));
       }
     });
     return options;
