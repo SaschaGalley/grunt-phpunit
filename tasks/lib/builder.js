@@ -166,7 +166,9 @@ exports.init = function(grunt) {
     var options = [];
 
     _.each(valued, function(value, key) {
-      if(config[key]) {
+      if (grunt.option(value)) {
+        options.push('--'+value+' '+grunt.option(value));
+      } else if(config[key]) {
         options.push('--'+value+' '+config[key]);
       }
     });
