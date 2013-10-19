@@ -213,7 +213,7 @@ exports.init = function(grunt) {
    * @param Object runner
    */
   exports.build = function(dir, options) {
-    directory = path.normalize(dir);
+    directory = dir ? path.normalize(dir) : '';
     config    = options(defaults);
 
     return command() + ' ' + buildOptions() + ' ' + directory;
