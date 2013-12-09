@@ -108,7 +108,7 @@ exports.init = function(grunt) {
     testdoxText: 'testdox-text',
     filter: 'filter',
     group: 'group',
-    excludeGroup: 'excludeGroup',
+    excludeGroup: 'exclude-group',
     loader: 'loader',
     printer: 'printer',
     repeat: 'repeat',
