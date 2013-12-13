@@ -101,6 +101,7 @@ exports.init = function(grunt) {
     logJunit: 'log-junit',
     logTap: 'log-tap',
     logJson: 'log-json',
+    coverageText: 'coverage-text',
     coverageHtml: 'coverage-html',
     coverageClover: 'coverage-clover',
     coveragePhp: 'coverage-php',
@@ -169,7 +170,7 @@ exports.init = function(grunt) {
       if (grunt.option(value)) {
         options.push('--'+value+' '+grunt.option(value));
       } else if(config[key]) {
-        options.push('--'+value+' '+config[key]);
+        options.push('--'+value+'="'+config[key]+'"');
       }
     });
     return options;
