@@ -16,14 +16,25 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask( 'phpunit', 'Run phpunit', function() {
 
-    var command = builder.build(this.data.dir, this.options);
-    var dir     = builder.directory();
-    var config  = builder.config();
+    var directory = this.data.dir || '';
 
-    grunt.log.writeln('Starting phpunit (target: ' + this.target.cyan + ') in ' + dir.cyan);
+    delete this.data.dir;
+    var options = this.options(this.data);
+
+    var command = builder.build(directory, function(config) {
+      // Merge task options with global options
+      Object.keys(options).forEach(function(key) {
+        config[key] = options[key];
+      });
+
+      return config;
+    });
+
+    // Run the command
+    grunt.log.writeln('Starting phpunit (target: ' + this.target.cyan + ') in ' + builder.directory().cyan);
     grunt.verbose.writeln('Exec: ' + command);
 
-    phpunit.run(command, this.async(), config);
+    phpunit.run(command, this.async(), builder.config());
   });
 
 };
