@@ -39,6 +39,10 @@ exports.init = function(grunt) {
       term.stdout.on('data', function(data) {
         grunt.log.write(data);
       });
+
+      term.stderr.on('data', function(data) {
+        grunt.log.error(data);
+      });
     }
   };
 
