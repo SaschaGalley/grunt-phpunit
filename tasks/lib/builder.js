@@ -59,7 +59,8 @@ exports.init = function(grunt) {
     noConfiguration: false,
     includePath: false,
     d: false,
-    followOutput: false
+    followOutput: false,
+    failOnFailures: false
   };
 
   /**
