@@ -29,10 +29,20 @@ exports.init = function(grunt) {
         grunt.log.write(stdout);
       }
 
+
       if (err) {
-        grunt.fatal(err);
+        if(err.code === 1 || err.code === 2) {
+          if(config.failOnFailures) {
+            callback(false);
+          } else {
+            grunt.fatal(err);
+          }
+        } else {
+          grunt.fatal(err);
+        }
+      } else {
+        callback();
       }
-      callback();
     });
 
     if (config.followOutput) {

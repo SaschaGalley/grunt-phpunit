@@ -240,3 +240,11 @@ Type: `Boolean` Default: `false`
 
 Prints the output to the console immediately, instead of displaying the whole ouput at the end.
 This can be useful -combining with debug: true- when there are many long running tests.
+
+####failOnFailures
+Type: `Boolean` Default: `false`
+
+Phpunit will return with exit code 1 when there are failed tests and wit exit code 2 when there are errors, and grunt will abort in this cases.
+When you want the task finish without aborting set failOnFailures to true.
+
+
