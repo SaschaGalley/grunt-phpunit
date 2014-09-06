@@ -23,7 +23,7 @@ exports.init = function(grunt) {
    */
   exports.run = function(command, callback, config) {
 
-    var term = exec(command, function(err, stdout, stderr) {
+    var term = exec(command, {maxBuffer: config.execMaxBuffer}, function(err, stdout, stderr) {
 
       if (stdout && !config.followOutput) {
         grunt.log.write(stdout);
