@@ -59,6 +59,7 @@ exports.init = function(grunt) {
     noConfiguration: false,
     includePath: false,
     d: false,
+    testsuite: false,
     followOutput: false,
     failOnFailures: false,
     
@@ -120,7 +121,8 @@ exports.init = function(grunt) {
     printer: 'printer',
     repeat: 'repeat',
     includePath: 'include-path',
-    d: 'd'
+    d: 'd',
+    testsuite: 'testsuite'
   };
 
   /**
