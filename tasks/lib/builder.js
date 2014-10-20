@@ -60,6 +60,7 @@ exports.init = function(grunt) {
     includePath: false,
     d: false,
     testsuite: false,
+    testSuffix: false,
     followOutput: false,
     failOnFailures: false,
     
@@ -122,7 +123,8 @@ exports.init = function(grunt) {
     repeat: 'repeat',
     includePath: 'include-path',
     d: 'd',
-    testsuite: 'testsuite'
+    testsuite: 'testsuite',
+    testSuffix: 'test-suffix'
   };
 
   /**
