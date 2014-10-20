@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git://github.com/SaschaGalley/grunt-phpunit.git"
   },
-  "version": "0.3.5",
+  "version": "0.3.6",
   "contributors": [{
     "name": "James Cryer",
     "email": "chat@jamescryer.com",
