@@ -95,6 +95,19 @@ Type: `Boolean` Default: `false`
 
 Generate code coverage report in text format. Default to writing to the standard output. This option can also be set by running the task with `--coverage`.
 
+####testsuite
+Type: `String` Default: `false`
+Filter which testsuite to run.
+
+####testSuffix
+Type: `String` Default: `false`
+Only search for test in files with specified suffix(es).
+
+####testdox
+Type: `Boolean` Default: `false`
+
+Report test execution progress in TestDox format. This option can also be set by running the task with `--testdox`.
+
 ####testdoxHtml
 Type: `String` Default: `false`
 
@@ -144,11 +157,6 @@ Runs the test(s) repeatedly.
 Type: `Boolean` Default: `false`
 
 Report test execution progress in TAP format. This option can also be set by running the task with `--tap`.
-
-####testdox
-Type: `Boolean` Default: `false`
-
-Report test execution progress in TestDox format. This option can also be set by running the task with `--testdox`.
 
 ####colors
 Type: `Boolean` Default: `false`
