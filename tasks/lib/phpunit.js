@@ -23,7 +23,25 @@ exports.init = function(grunt) {
    */
   exports.run = function(command, callback, config) {
 
-    var term = exec(command, {maxBuffer: config.execMaxBuffer}, function(err, stdout, stderr) {
+    var cmdCommands = {
+      cwd : "",
+      env : {},
+      encoding : 'utf8',
+      timeout : 0,
+      maxBuffer: 200*1024,
+      killSignal : "SIGTERM"
+    };
+
+    Object.keys(cmdCommands).forEach(function(key) {
+      var configKey = "exec" + key.charAt(0).toUpperCase() + key.slice(1);
+      if (config[configKey]) {
+        cmdCommands[key] = config[configKey];
+      } else {
+        delete cmdCommands[key];
+      }
+    });
+
+    var term = exec(command, cmdCommands, function(err, stdout, stderr) {
 
       if (stdout && !config.followOutput) {
         grunt.log.write(stdout);

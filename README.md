@@ -258,7 +258,26 @@ When you want the task finish without aborting set failOnFailures to true.
 ####execMaxBuffer
 Type: `Integer` Default: `200*1024`
 
-Configure the Node JS `maxBuffer` option passed to the 
-[`exec`](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback) function. 
-This can be useful if you need to run a large test suite which outputs lot of logs, otherwise you could encounter a 
+Configure the Node JS `maxBuffer` option passed to the
+[`exec`](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback) function.
+This can be useful if you need to run a large test suite which outputs lot of logs, otherwise you could encounter a
 `Fatal error: stdout maxBuffer exceeded.` error. See issue [#29](https://github.com/SaschaGalley/grunt-phpunit/issues/29) for more informations about this.
+
+####execCwd
+Type: `String` Default: ``
+
+Current working directory of the child process
+
+####execEnv
+Type: `Object` Default: `{}`
+
+Object Environment key-value pairs
+
+####execEncoding
+Type: `String` Default: `utf8`
+
+####execTimeout
+Type: `Number` Default: 0
+
+####execKillSignal
+Type: `String` Default: `SIGTERM`
