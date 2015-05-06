@@ -58,6 +58,8 @@ exports.init = function(grunt) {
     staticBackup: false,
     noConfiguration: false,
     includePath: false,
+    testsuite: false,
+    testSuffix: false,
     followOutput: false,
     failOnFailures: false,
 
@@ -118,7 +120,9 @@ exports.init = function(grunt) {
     loader: 'loader',
     printer: 'printer',
     repeat: 'repeat',
-    includePath: 'include-path'
+    includePath: 'include-path',
+    testsuite: 'testsuite',
+    testSuffix: 'test-suffix'
   };
 
   /**
