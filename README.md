@@ -95,6 +95,19 @@ Type: `Boolean` Default: `false`
 
 Generate code coverage report in text format. Default to writing to the standard output. This option can also be set by running the task with `--coverage`.
 
+####testsuite
+Type: `String` Default: `false`
+Filter which testsuite to run.
+
+####testSuffix
+Type: `String` Default: `false`
+Only search for test in files with specified suffix(es).
+
+####testdox
+Type: `Boolean` Default: `false`
+
+Report test execution progress in TestDox format. This option can also be set by running the task with `--testdox`.
+
 ####testdoxHtml
 Type: `String` Default: `false`
 
@@ -144,11 +157,6 @@ Runs the test(s) repeatedly.
 Type: `Boolean` Default: `false`
 
 Report test execution progress in TAP format. This option can also be set by running the task with `--tap`.
-
-####testdox
-Type: `Boolean` Default: `false`
-
-Report test execution progress in TestDox format. This option can also be set by running the task with `--testdox`.
 
 ####colors
 Type: `Boolean` Default: `false`
@@ -231,9 +239,18 @@ Type: `String` Default: `false`
 Prepend PHP's include_path with given path(s).
 
 ####d
-Type: `String` Default: `false`
+Type: `Object` Default: `undefined`
 
-Sets a php.ini value.
+Sets a php.ini value, e.g.:
+```js
+options: {
+    d: {
+        'error_reporting': 32767, // E_ALL
+        'display_errors': '1',
+        'display_startup_errors': '1'
+    },
+},
+```
 
 ####followOutput
 Type: `Boolean` Default: `false`
@@ -250,7 +267,7 @@ When you want the task finish without aborting set failOnFailures to true.
 ####execMaxBuffer
 Type: `Integer` Default: `200*1024`
 
-Configure the Node JS `maxBuffer` option passed to the 
-[`exec`](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback) function. 
-This can be useful if you need to run a large test suite which outputs lot of logs, otherwise you could encounter a 
+Configure the Node JS `maxBuffer` option passed to the
+[`exec`](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback) function.
+This can be useful if you need to run a large test suite which outputs lot of logs, otherwise you could encounter a
 `Fatal error: stdout maxBuffer exceeded.` error. See issue [#29](https://github.com/SaschaGalley/grunt-phpunit/issues/29) for more informations about this.
