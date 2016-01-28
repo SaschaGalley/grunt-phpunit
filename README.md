@@ -1,6 +1,7 @@
-# grunt-phpunit
+# grunt-phpunit-D+
 
 > Grunt plugin for running phpunit.
+It's a fork of [grunt-phpunit](https://github.com/SaschaGalley/grunt-phpunit) with enhanced possibilities for the 'd' options.
 
 ##Getting Started
 
@@ -11,7 +12,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 1. Install this grunt plugin with the following command:
 
 	```shell
-	npm install grunt-phpunit --save-dev
+	npm install grunt-phpunit-dplus --save-dev
 	```
 
 
