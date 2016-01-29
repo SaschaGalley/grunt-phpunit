@@ -1,22 +1,12 @@
 {
-  "name": "grunt-phpunit",
+  "name": "grunt-phpunit-dplus",
   "description": "Grunt plugin for running phpunit.",
-  "homepage": "https://github.com/SaschaGalley/grunt-phpunit",
-  "author": {
-    "name": "Sascha Galley",
-    "email": "me@xash.at",
-    "url": "http://xash.at/"
-  },
+  "author": "Michael Büttner <michbuett@gmx.de>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/SaschaGalley/grunt-phpunit.git"
+    "url": "git://github.com/michbuett/grunt-phpunit.git"
   },
-  "version": "0.3.6",
-  "contributors": [{
-    "name": "James Cryer",
-    "email": "chat@jamescryer.com",
-    "url": "http://www.jamescryer.com/"
-  }],
+  "version": "0.4.0",
   "main": "Gruntfile.js",
   "engines": {
     "node": "0.10.x"

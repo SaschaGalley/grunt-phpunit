@@ -58,13 +58,12 @@ exports.init = function(grunt) {
     staticBackup: false,
     noConfiguration: false,
     includePath: false,
-    d: false,
     testsuite: false,
     testSuffix: false,
     followOutput: false,
     failOnFailures: false,
-    
-    // See NodeJS exec options 
+
+    // See NodeJS exec options
     // http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback
     execMaxBuffer: 200*1024
 
@@ -122,7 +121,6 @@ exports.init = function(grunt) {
     printer: 'printer',
     repeat: 'repeat',
     includePath: 'include-path',
-    d: 'd',
     testsuite: 'testsuite',
     testSuffix: 'test-suffix'
   };
@@ -187,6 +185,21 @@ exports.init = function(grunt) {
   };
 
   /**
+   * Builds options for the php.ini settings
+   *
+   * @return array
+   */
+  var buildDOptions = function() {
+
+    var options = [];
+
+    _.each(config.d, function(value, key) {
+      options.push('-d '+key+'='+value);
+    });
+    return options;
+  };
+
+  /**
    * Builds phpunit command
    *
    * @return string
@@ -196,7 +209,8 @@ exports.init = function(grunt) {
     var options = [].concat(
       buildFlagOptions(),
       buildFileOptions(),
-      buildValuedOptions()
+      buildValuedOptions(),
+      buildDOptions()
     );
     return options.join(' ');
   };
