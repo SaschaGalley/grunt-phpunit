@@ -2,6 +2,7 @@
   "name": "grunt-phpunit",
   "description": "Grunt plugin for running phpunit.",
   "homepage": "https://github.com/SaschaGalley/grunt-phpunit",
+  "license": "MIT",
   "author": {
     "name": "Sascha Galley",
     "email": "me@xash.at",
