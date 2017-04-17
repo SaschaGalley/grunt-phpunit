@@ -2,7 +2,7 @@
 
 > Grunt plugin for running phpunit.
 
-##Getting Started
+## Getting Started
 
 This plugin requires Grunt `0.4.0`.
 
@@ -29,11 +29,11 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 	```
 
 
-##PHPUnit task
+## PHPUnit task
 
 _Run this task with the `grunt phpunit` command._
 
-###Usage Example
+### Usage Example
 
 ```js
 phpunit: {
@@ -48,214 +48,214 @@ phpunit: {
 }
 ```
 
-###Target Properties
-####dir
+### Target Properties
+#### dir
 Type: `String`
 
 The directory where phpunit should be run, i.e. where the test classes and the bootstrap are located in.
 
-###Options
-####bin
+### Options
+#### bin
 Type: `String`  Default: `'phpunit'`
 
 The executable binary.
 
-####logJunit
+#### logJunit
 Type: `String` Default: `false`
 
 Log test execution in JUnit XML format to file.
 
-####logTap
+#### logTap
 Type: `String` Default: `false`
 
 Log test execution in TAP format to file.
 
-####logJson
+#### logJson
 Type: `String` Default: `false`
 
 Log test execution in JSON format.
 
-####coverageClover
+#### coverageClover
 Type: `String` Default: `false`
 
 Generate code coverage report in Clover XML format.
 
-####coverageHtml
+#### coverageHtml
 Type: `String` Default: `false`
 
 Generate code coverage report in HTML format.
 
-####coveragePhp
+#### coveragePhp
 Type: `String` Default: `false`
 
 Serialize PHP_CodeCoverage object to file.
 
-####coverage (or coverageText)
+#### coverage (or coverageText)
 Type: `Boolean` Default: `false`
 
 Generate code coverage report in text format. Default to writing to the standard output. This option can also be set by running the task with `--coverage`.
 
-####testsuite
+#### testsuite
 Type: `String` Default: `false`
 Filter which testsuite to run.
 
-####testSuffix
+#### testSuffix
 Type: `String` Default: `false`
 Only search for test in files with specified suffix(es).
 
-####testdox
+#### testdox
 Type: `Boolean` Default: `false`
 
 Report test execution progress in TestDox format. This option can also be set by running the task with `--testdox`.
 
-####testdoxHtml
+#### testdoxHtml
 Type: `String` Default: `false`
 
 Write agile documentation in HTML format to file.
 
-####testdoxText
+#### testdoxText
 Type: `String` Default: `false`
 
 Write agile documentation in Text format to file.
 
-####filter
+#### filter
 Type: `String` Default: `false`
 
 Filter which tests to run.
 
-####group
+#### group
 Type: `String` Default: `false`
 
 Only runs tests from the specified group(s).
 
-####excludeGroup
+#### excludeGroup
 Type: `String` Default: `false`
 
 Exclude tests from the specified group(s).
 
-####listGroups
+#### listGroups
 Type: `Boolean` Default: `false`
 
 List available test groups. This option can also be set by running the task with `--list-groups`.
 
-####loader
+#### loader
 Type: `String` Default: `false`
 
 TestSuiteLoader implementation to use.
 
-####printer
+#### printer
 Type: `String` Default: `false`
 
 TestSuiteListener implementation to use.
 
-####repeat
+#### repeat
 Type: `String` Default: `false`
 
 Runs the test(s) repeatedly.
 
-####tap
+#### tap
 Type: `Boolean` Default: `false`
 
 Report test execution progress in TAP format. This option can also be set by running the task with `--tap`.
 
-####colors
+#### colors
 Type: `Boolean` Default: `false`
 
 Use colors in output. This option can also be set by running the task with `--colors`.
 
-####stderr
+#### stderr
 Type: `Boolean` Default: `false`
 
 Write to STDERR instead of STDOUT. This option can also be set by running the task with `--stderr`.
 
-####stopOnError
+#### stopOnError
 Type: `Boolean` Default: `false`
 
 Stop execution upon first error. This option can also be set by running the task with `--stop-on-error`.
 
-####stopOnFailure
+#### stopOnFailure
 Type: `Boolean` Default: `false`
 
 Stop execution upon first error or failure. This option can also be set by running the task with `--stop-on-failure`.
 
-####stopOnSkipped
+#### stopOnSkipped
 Type: `Boolean` Default: `false`
 
 Stop execution upon first skipped test. This option can also be set by running the task with `--stop-on-skipped`.
 
-####stopOnIncomplete
+#### stopOnIncomplete
 Type: `Boolean` Default: `false`
 
 Stop execution upon first incomplete test. This option can also be set by running the task with `--stop-on-incomplete`.
 
-####strict
+#### strict
 Type: `Boolean` Default: `false`
 
 Run tests in strict mode. This option can also be set by running the task with `--strict`.
 
-####verbose
+#### verbose
 Type: `Boolean` Default: `false`
 
 Output more verbose information. This option can also be set by running the task with `--verbose`.
 
-####debug
+#### debug
 Type: `Boolean` Default: `false`
 
 Display debbuging information during test execution. This option can also be set by running the task with `--debug`.
 
-####processIsolation
+#### processIsolation
 Type: `Boolean` Default: `false`
 
 Run each test in a separate PHP process. This option can also be set by running the task with `--process-isolation`.
 
-####noGlobalsBackup
+#### noGlobalsBackup
 Type: `Boolean` Default: `false`
 
 Do not backup and restore $GLOBALS for each test. This option can also be set by running the task with `--no-globals-backup`.
 
-####staticBackup
+#### staticBackup
 Type: `Boolean` Default: `false`
 
 Backup and restore static attributes for each test. This option can also be set by running the task with `--static-backup`.
 
-####bootstrap
+#### bootstrap
 Type: `String` Default: `false`
 
 A "bootstrap" PHP file that is run before the tests.
 
-####configuration
+#### configuration
 Type: `String` Default: `false`
 
 Read configuration from XML file.
 
-####noConfiguration
+#### noConfiguration
 Type: `Boolean` Default: `false`
 
 Ignore default configuration file (phpunit.xml). This option can also be set by running the task with `--no-configuration`.
 
-####includePath
+#### includePath
 Type: `String` Default: `false`
 
 Prepend PHP's include_path with given path(s).
 
-####d
+#### d
 Type: `String` Default: `false`
 
 Sets a php.ini value.
 
-####followOutput
+#### followOutput
 Type: `Boolean` Default: `false`
 
 Prints the output to the console immediately, instead of displaying the whole ouput at the end.
 This can be useful -combining with debug: true- when there are many long running tests.
 
-####failOnFailures
+#### failOnFailures
 Type: `Boolean` Default: `false`
 
 Phpunit will return with exit code 1 when there are failed tests and wit exit code 2 when there are errors, and grunt will abort in this cases.
 When you want the task finish without aborting set failOnFailures to true.
 
-####execMaxBuffer
+#### execMaxBuffer
 Type: `Integer` Default: `200*1024`
 
 Configure the Node JS `maxBuffer` option passed to the 
